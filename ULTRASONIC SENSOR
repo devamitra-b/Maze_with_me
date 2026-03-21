@@ -1,1 +1,53 @@
+ULTRASONIC SENSOR:
+A typical module like HC-SR04 Ultrasonic Sensor sends out high-frequency sound waves (ultrasound) and measures how long they take to return.
+Humans can’t hear these sounds (above 20 kHz).
 
+How it works (Step-by-step):
+1.Send sound wave
+Sensor sends ultrasonic pulse (~40 kHz)
+2.Wave travels
+It moves through air and hits an object
+3.Echo returns
+Sound reflects back to the sensor
+4.Time is measured
+Sensor calculates how long the echo took
+5.Distance is calculated
+Distance depends on time and speed of sound
+Distance Formula
+Distance=Speed of Sound×Time/2
+Speed of sound ≈ 343 m/s
+Divide by 2 → because wave goes and comes back
+
+Ultrasonic Sensor Pin Configuration:
+The commonly used module is the
+HC-SR04 Ultrasonic Sensor
+It has 4 pins:
+Pins Overview
+1.VCC (Power)
+Connect to 5V
+Powers the sensor
+2.GND (Ground)
+Connect to GND
+Completes the circuit
+3.TRIG (Trigger)
+Input pin
+Used to send ultrasonic pulse
+Arduino sends a 10 microsecond HIGH signal to this pin
+4.ECHO (Echo)
+Output pin
+Returns the signal after reflection
+Arduino reads how long it stays HIGH
+
+VCC → Power
+GND → Ground
+TRIG → Send signal
+ECHO → Receive signal
+ECHO pin gives 5V output → safe for Arduino Nano
+Keep wires short for accuracy
+Use stable power supply
+
+Working Flow with Pins:
+Arduino → sends pulse via TRIG
+Sensor → emits sound wave
+Echo returns → ECHO goes HIGH
+Arduino → measures time
