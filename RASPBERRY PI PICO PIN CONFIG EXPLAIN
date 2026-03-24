@@ -1,0 +1,202 @@
+         ┌──────────────────────┐
+  GP0  1 │●                    ●│ 40  VBUS   (5V from USB)
+  GP1  2 │●                    ●│ 39  VSYS   (2-5V input)
+  GND  3 │●  Raspberry Pi      ●│ 38  GND
+  GP2  4 │●      Pico 2        ●│ 37  3V3_EN
+  GP3  5 │●                    ●│ 36  3V3    (3.3V output)
+  GP4  6 │●   RP2350           ●│ 35  ADC_VREF
+  GP5  7 │●                    ●│ 34  GP28 / ADC2
+  GND  8 │●                    ●│ 33  GND / AGND
+  GP6  9 │●                    ●│ 32  GP27 / ADC1
+  GP7 10 │●                    ●│ 31  GP26 / ADC0
+  GP8 11 │●                    ●│ 30  RUN
+  GP9 12 │●                    ●│ 29  GP22
+  GND 13 │●                    ●│ 28  GND
+ GP10 14 │●                    ●│ 27  GP21
+ GP11 15 │●                    ●│ 26  GP20
+ GP12 16 │●                    ●│ 25  GP19
+ GP13 17 │●                    ●│ 24  GP18
+  GND 18 │●                    ●│ 23  GND
+ GP14 19 │●                    ●│ 22  GP17
+ GP15 20 │●                    ●│ 21  GP16
+         └──────────────────────┘
+                 [USB-C)
+                  PIN 1 — GP0 (GPIO 0)
+GP0 is the very first general-purpose input/output pin on the Raspberry Pi Pico 2. It is located at the top-left corner of the board when the USB connector is facing upward. As a basic digital pin, GP0 can be configured as either an input or an output using software. When used as an output, it can drive an LED, a transistor, or any low-current digital device. When used as an input, it can read button presses, sensor signals, or logic levels from other devices.
+Beyond basic digital use, GP0 is also the UART0 TX (Transmit) pin, which means it can send serial data to another device such as a GPS module, Bluetooth module, or another microcontroller. It also serves as the SPI0 RX (receive data for SPI bus 0), I2C0 SDA (the data line for I2C bus 0), and PWM0 A (channel A of PWM slice 0 for generating analog-like signals). This makes GP0 one of the most versatile pins on the board.
+Use cases: LED control, UART serial communication, I2C sensor data line, SPI data input, PWM motor/servo control.
+
+PIN 2 — GP1 (GPIO 1)
+GP1 is the second GPIO pin, sitting directly below GP0 on the left side of the board. It shares many of the same alternate functions as its neighbour but plays complementary roles. As UART0 RX, it is the receive line for serial communication — paired with GP0 TX, these two pins together form a complete UART0 serial port.
+GP1 also functions as SPI0 CSn (Chip Select for SPI bus 0), which is used to select/deselect a specific SPI device on the bus. In I2C mode, it becomes I2C0 SCL (the clock line for I2C bus 0) — paired with GP0 SDA, they form a complete I2C0 interface. It also supports PWM0 B, the B channel of PWM slice 0.
+Use cases: UART serial receive, I2C clock line, SPI chip select, PWM signal generation.
+
+PIN 3 — GND (Ground)
+This is the first ground pin on the board. Ground is the reference point (0V) for all electrical signals and power supplies. Every circuit connected to the Pico 2 must share a common ground with this pin. Without a proper ground connection, no sensor, LED, motor, or module will work correctly. The Pico 2 has multiple GND pins distributed around the board for convenience so you do not have to route all ground wires to a single point.
+Use cases: Common ground reference for all external circuits and modules.
+
+PIN 4 — GP2 (GPIO 2)
+GP2 is a versatile GPIO pin that can be used for digital input or output. Its primary alternate functions include SPI0 SCK (the clock signal for SPI bus 0), which drives the timing of SPI data transfer. It also serves as I2C1 SDA (data line for I2C bus 1) and PWM1 A (channel A of PWM slice 1).
+When you need to use two separate I2C buses simultaneously — for example, running two different groups of sensors — GP2 and GP3 give you the second I2C bus (I2C1), independent of the first (I2C0 on GP0/GP1).
+Use cases: SPI clock, second I2C bus data line, PWM output.
+
+PIN 5 — GP3 (GPIO 3)
+GP3 works hand-in-hand with GP2. As SPI0 TX (MOSI — Master Out Slave In), it sends data from the Pico 2 to an SPI peripheral like an SD card, display, or sensor. As I2C1 SCL, it provides the clock for the second I2C bus. It also supports PWM1 B.
+Use cases: SPI data output to peripherals, I2C1 clock line, PWM generation.
+
+PIN 6 — GP4 (GPIO 4)
+GP4 is notable for providing a second UART interface. As UART1 TX, it can transmit serial data on the UART1 bus — useful when you need two separate serial connections at the same time (e.g., one for a GPS and one for a Bluetooth module). It also works as SPI0 RX, I2C0 SDA (an alternate mapping for I2C bus 0), and PWM2 A.
+Use cases: Second UART transmit, additional I2C0 option, SPI receive, PWM.
+
+PIN 7 — GP5 (GPIO 5)
+GP5 is the UART1 RX pin — paired with GP4 TX, they form the complete UART1 serial port. It also offers SPI0 CSn, I2C0 SCL (alternate mapping), and PWM2 B functionality. Having two UART ports (UART0 on GP0/GP1 and UART1 on GP4/GP5) is very useful in projects that need simultaneous serial communication with multiple devices.
+Use cases: Second UART receive, SPI chip select, I2C clock, PWM.
+
+PIN 8 — GND (Ground)
+Second ground pin on the board. Placed here for convenient access when wiring devices connected to the GP2–GP7 pins. Having ground pins interspersed throughout the header reduces the length of ground wires needed in your circuits.
+
+PIN 9 — GP6 (GPIO 6)
+GP6 provides the SPI0 SCK clock (alternate mapping), I2C1 SDA (alternate data line for the second I2C bus), and PWM3 A. It is a clean digital I/O pin suitable for connecting buttons, LEDs, relays, or logic-level devices. Being on PWM slice 3, it can generate smooth PWM waveforms independently from the other PWM channels.
+Use cases: I2C1 data line, SPI clock, PWM, digital I/O.
+
+PIN 10 — GP7 (GPIO 7)
+GP7 mirrors GP6’s capabilities with SPI0 TX (data output), I2C1 SCL (clock for second I2C bus), and PWM3 B. Together with GP6, it forms another complete I2C1 bus mapping option, giving you maximum flexibility in choosing which physical pins to use for your I2C devices.
+Use cases: SPI data output, I2C1 clock, PWM, digital I/O.
+
+PIN 11 — GP8 (GPIO 8)
+GP8 introduces the SPI1 bus. As SPI1 RX (MISO — receive data from SPI peripheral), it is the input side of the second SPI bus. This is extremely useful when you already have SPI0 occupied (e.g., with an SD card) and need another SPI device (e.g., a display). GP8 also supports UART1 TX, I2C0 SDA (another alternate mapping), and PWM4 A.
+Use cases: Second SPI bus data input, UART1 transmit, I2C0 data, PWM.
+
+PIN 12 — GP9 (GPIO 9)
+GP9 serves as SPI1 CSn (Chip Select for the second SPI bus), UART1 RX, I2C0 SCL (alternate), and PWM4 B. Paired with GP8, GP10, and GP11, these four pins form the complete SPI1 bus, enabling a second independent SPI interface.
+Use cases: SPI1 chip select, UART1 receive, I2C clock, PWM.
+
+PIN 13 — GND (Ground)
+Third ground pin. Centrally positioned on the left side of the header to minimize ground wire routing for the middle section of the board.
+
+PIN 14 — GP10 (GPIO 10)
+GP10 is the SPI1 SCK — the clock signal that drives the second SPI bus. Every SPI transaction requires a clock, and GP10 provides that for SPI1. It also doubles as I2C1 SDA (alternate) and PWM5 A. If you are building a project with a TFT display using SPI1, GP10 would be your clock pin.
+Use cases: SPI1 clock, I2C1 data, PWM, digital I/O.
+
+PIN 15 — GP11 (GPIO 11)
+GP11 is SPI1 TX (MOSI — data from Pico 2 to the SPI peripheral). Together with GP8 (RX), GP9 (CSn), and GP10 (SCK), GP11 completes the full SPI1 bus. It also supports I2C1 SCL and PWM5 B.
+Use cases: SPI1 data output, I2C1 clock, PWM.
+
+PIN 16 — GP12 (GPIO 12)
+GP12 is another highly capable pin offering UART0 TX (alternate mapping for the first UART), SPI1 RX, I2C0 SDA (alternate), and PWM6 A. Having UART0 available on multiple pins is handy when the primary GP0/GP1 pins are already in use for something else. You can remap UART0 to GP12/GP13 without any hardware changes — just a software configuration.
+Use cases: UART0 transmit (alternate), SPI1 receive, I2C0 data, PWM.
+
+PIN 17 — GP13 (GPIO 13)
+GP13 is UART0 RX (alternate), SPI1 CSn, I2C0 SCL (alternate), and PWM6 B. Paired with GP12, it forms an alternate location for the UART0 serial port. This flexibility allows you to choose pin locations that best suit your PCB layout or breadboard design.
+Use cases: UART0 receive (alternate), SPI1 chip select, I2C0 clock, PWM.
+
+PIN 18 — GND (Ground)
+Fourth ground pin. Positioned at the midpoint of the board for easy access to circuits in this region.
+
+PIN 19 — GP14 (GPIO 14)
+GP14 provides SPI1 SCK (alternate clock for SPI1), I2C1 SDA (alternate), and PWM7 A. PWM slice 7 channel A makes this pin useful for applications like servo motor control, buzzer tones, or LED dimming. It is a clean, reliable digital I/O pin suitable for most beginner and advanced projects.
+Use cases: SPI1 clock (alternate), I2C1 data, PWM servo/LED/buzzer control.
+
+PIN 20 — GP15 (GPIO 15)
+GP15 is the final pin on the left column of the header. It provides SPI1 TX (alternate MOSI for SPI1), I2C1 SCL (alternate), and PWM7 B. This pin is often used for PWM-based applications because PWM slice 7 B can operate independently from all other PWM channels simultaneously.
+Use cases: SPI1 data output (alternate), I2C1 clock, PWM.
+
+PIN 21 — GP16 (GPIO 16)
+GP16 is the first pin on the right column (bottom-right when USB is up). It mirrors GP0’s functions: UART0 TX (another alternate location), SPI0 RX, I2C0 SDA (alternate), and PWM0 A. This is useful in dual-row breadboard designs where right-side pins are more convenient to route.
+Use cases: UART0 transmit, SPI0 receive, I2C0 data, PWM.
+
+PIN 22 — GP17 (GPIO 17)
+GP17 mirrors GP1’s functions: UART0 RX (alternate), SPI0 CSn, I2C0 SCL (alternate), and PWM0 B. Paired with GP16, it gives you another physical location for the full UART0 serial port on the right side of the board.
+Use cases: UART0 receive (alternate), SPI0 chip select, I2C0 clock, PWM.
+
+PIN 23 — GND (Ground)
+Fifth ground pin, located on the right side of the board to serve circuits connected to GP16–GP22.
+
+PIN 24 — GP18 (GPIO 18)
+GP18 provides SPI0 SCK (alternate clock for SPI bus 0), I2C1 SDA (alternate), and PWM1 A. It is particularly important when using the right side of the board for SPI0 connections — for example, wiring an OLED display entirely on the right side without crossing wires to the left.
+Use cases: SPI0 clock (alternate), I2C1 data, PWM.
+
+PIN 25 — GP19 (GPIO 19)
+GP19 is SPI0 TX (alternate MOSI), I2C1 SCL (alternate), and PWM1 B. Together with GP18 (SCK), GP16 (RX), and GP17 (CSn), these right-side pins form a complete alternate SPI0 bus mapping.
+Use cases: SPI0 data output (alternate), I2C1 clock, PWM.
+
+PIN 26 — GP20 (GPIO 20)
+GP20 provides UART1 TX (alternate location for the second UART), SPI0 RX (alternate), I2C0 SDA (alternate), and PWM2 A. This pin is on the right side, making it convenient for breadboard designs where UART devices are wired on the right side of the board.
+Use cases: UART1 transmit (alternate), SPI receive, I2C0 data, PWM.
+
+PIN 27 — GP21 (GPIO 21)
+GP21 is UART1 RX (alternate), SPI0 CSn (alternate), I2C0 SCL (alternate), and PWM2 B. Paired with GP20, it provides a complete second UART (UART1) on the right side of the board.
+Use cases: UART1 receive (alternate), SPI chip select, I2C clock, PWM.
+
+PIN 28 — GND (Ground)
+Sixth ground pin on the right side. This ground is located near the GP20/GP21 area for convenient wiring of modules connected to those pins.
+
+PIN 29 — GP22 (GPIO 22)
+GP22 is a general-purpose digital I/O pin with fewer alternate functions compared to the lower-numbered GPIO pins. It supports SPI0 SCK (an alternate SPI0 clock location) and PWM3 A. It is often used as a simple interrupt input, a chip enable/disable line, or a status indicator output. Its relative simplicity makes it easy to use without accidentally conflicting with other bus configurations.
+Use cases: General digital I/O, interrupt input, SPI0 clock (alternate), PWM.
+
+PIN 30 — RUN (Reset Pin)
+The RUN pin is a special system control pin, not a GPIO. It is used to reset the Pico 2. When this pin is pulled LOW (connected to GND), the RP2350 chip immediately stops execution and resets — equivalent to pressing a reset button. When released back HIGH (or left floating, as it has an internal pull-up), the chip resumes normal operation and re-runs the program from the beginning.
+This pin is used to add an external reset button to your project. It is also used by debuggers and programming tools (like the SWD interface) to reset the chip during firmware flashing.
+Use cases: External reset button, debugger reset control. Do NOT use as a general GPIO pin.
+
+PIN 31 — GP26 / ADC0
+GP26 is the first analog-capable pin on the Pico 2. It can function as a regular digital GPIO, but its primary special role is as ADC Channel 0 — an analog-to-digital converter input. This means it can read continuously varying voltage levels (0V to 3.3V) and convert them into a 12-bit digital value (0 to 4095). This is essential for reading analog sensors such as temperature sensors (thermistors), light sensors (LDRs), potentiometers, joysticks, microphones, and many more.
+For example, if a sensor outputs 1.65V, the ADC will read approximately 2047 (half of 4095). The ADC has 12-bit resolution, giving 4096 distinct levels across the 0–3.3V input range, for a step size of about 0.8mV per step.
+GP26 also supports SPI1 SCK and I2C1 SDA as digital alternate functions.
+Use cases: Analog sensor reading (potentiometer, LDR, thermistor, joystick), voltage measurement, SPI/I2C digital use.
+
+PIN 32 — GP27 / ADC1
+GP27 is the second analog pin, functioning as ADC Channel 1. It works identically to GP26 but is an independent ADC input, meaning you can measure two different analog signals simultaneously (within the same sampling cycle). This is important in projects like audio processing, multi-axis joystick reading, or comparing two sensor values in real time.
+It also offers SPI1 TX and I2C1 SCL as digital functions.
+Use cases: Second analog sensor input, dual-channel voltage measurement, I2C1 clock (alternate).
+
+PIN 33 — GND / AGND (Analog Ground)
+This ground pin is labeled AGND (Analog Ground) and is specifically positioned next to the ADC pins (GP26, GP27, GP28) for a reason. When using ADC pins to measure analog signals, it is best practice to use this AGND pin as the ground reference for your analog circuit. This minimizes electrical noise that digital circuits can inject into sensitive analog measurements. Using a dedicated analog ground path improves the accuracy and stability of ADC readings.
+Use cases: Ground reference specifically for analog/ADC circuits. Prefer this over other GND pins for sensor wiring.
+
+PIN 34 — GP28 / ADC2
+GP28 is the third and final user-accessible ADC pin, functioning as ADC Channel 2. It works exactly like GP26 and GP27, reading analog voltages between 0V and 3.3V and converting them to 12-bit digital values. With three ADC channels (GP26, GP27, GP28), you can simultaneously monitor three independent analog signals in your project.
+GP28 also supports SPI1 RX as a digital function.
+Note: There is a fourth ADC channel (ADC3) on GP29, but GP29 is not broken out on the standard 40-pin header. It is used internally to monitor the VSYS supply voltage. There is also an internal ADC channel (ADC4) connected to the chip’s built-in temperature sensor.
+Use cases: Third analog sensor input, SPI1 data receive (digital), voltage measurement.
+
+PIN 35 — ADC_VREF (ADC Reference Voltage)
+ADC_VREF is the reference voltage used by the analog-to-digital converter. By default, it is connected internally to the 3.3V regulator, meaning the ADC measures voltages between 0V and 3.3V. However, if you need higher precision, you can disconnect the internal connection and supply an external, very clean and stable reference voltage (such as from a precision voltage reference IC like the LM4040).
+The ADC reading is always relative to ADC_VREF. If you reduce ADC_VREF (e.g., to 2.0V), the ADC still gives 0–4095, but now spanning only 0–2.0V, effectively increasing resolution for small signals. This is an advanced technique used in precision measurement applications.
+Use cases: ADC precision control, external voltage reference for high-accuracy analog measurements.
+
+PIN 36 — 3V3 (3.3V Power Output)
+This pin outputs a regulated 3.3V supply from the Pico 2’s onboard voltage regulator. It can supply up to approximately 300mA of current to power external components. Most modern sensors, displays, and modules (such as OLED screens, BME280 weather sensors, MPU6050 gyroscopes) run on 3.3V and can be powered directly from this pin.
+Be careful not to draw too much current — if the total current drawn from this pin exceeds ~300mA, the voltage may drop and cause instability. For power-hungry devices, use an external power supply instead.
+Use cases: Powering 3.3V sensors and modules (OLEDs, IMUs, environmental sensors, etc.).
+
+PIN 37 — 3V3_EN (3.3V Enable)
+This is a control pin for the onboard 3.3V regulator. By default it is pulled HIGH internally, keeping the regulator active and the 3V3 output running. If you pull this pin LOW (connect it to GND), the 3.3V regulator is disabled, cutting power to all GPIO pins and the RP2350 chip itself — effectively putting the entire board into a very low power state.
+This is useful in battery-powered applications where you want to completely power down the Pico 2 under control of an external circuit (like a timer IC or another microcontroller). It consumes only a few microamps in this state.
+Use cases: Ultra-low-power sleep modes, battery-powered designs, remote on/off control.
+
+PIN 38 — GND (Ground)
+Seventh ground pin. Positioned near the power pins (3V3_EN, 3V3, ADC_VREF) on the right side to ensure a short, low-impedance ground path for power supply decoupling. Always keep power supply ground connections short and direct.
+
+PIN 39 — VSYS (System Power Input)
+VSYS is the main system power input for the Pico 2. It accepts a wide input voltage range of approximately 2V to 5.5V. When you power the Pico 2 from a battery (AA, LiPo, etc.) without a USB cable, you connect the battery positive terminal to VSYS and battery negative to GND. The onboard switching regulator converts this input voltage down to 3.3V for the chip and GPIO logic.
+When USB is plugged in, VSYS is automatically supplied from VBUS (5V from USB) through a diode. You can also feed VSYS from an external 3.3V–5V regulated supply for reliable embedded use.
+Use cases: Battery power input, external regulated supply input, power supply monitoring.
+
+PIN 40 — VBUS (USB 5V)
+VBUS is the raw 5V supply from the USB connector. When the Pico 2 is connected to a USB cable, this pin carries the 5V bus voltage from the host (computer, USB charger, power bank). You can use this pin to power 5V peripherals in your project — but only when USB is connected.
+Be aware: this is unregulated USB power, so it can fluctuate slightly. Never connect a 5V signal from VBUS directly to any GPIO pin — the GPIO pins are 3.3V only and will be damaged. You can read this pin (safely, through a voltage divider) to detect whether USB is connected.
+Use cases: Powering 5V peripherals (when USB is connected), USB presence detection via voltage divider.
+
+ONBOARD LED — GP25 (Not on Header)
+Although GP25 is not physically accessible on the 40-pin header, it is an important internal pin. It is connected to the onboard green LED on the Pico 2 board. You can control this LED directly in your code by toggling GP25 HIGH or LOW. This is the most basic way to test that your Pico 2 is working — the classic “blink” program uses GP25.
+from machine import Pin
+import time
+led = Pin(25, Pin.OUT)
+while True:
+    led.toggle()
+    time.sleep(0.5)
+
+BOOTSEL Button (Not a Pin — Physical Button)
+The BOOTSEL button is a small white button on the top face of the Pico 2. If you hold it down while plugging in the USB cable, the Pico 2 enters USB Mass Storage mode and appears as a USB drive on your computer. You can then drag and drop a .UF2 firmware file (MicroPython, CircuitPython, or your compiled C program) directly onto it — no special programming hardware needed. After the file is copied, the board automatically reboots and runs the new program.
