@@ -1,0 +1,24 @@
+A Time-of-Flight (ToF) sensor works on a beautifully simple yet powerful principle — 
+it measures distance by timing how long it takes for light to make a round trip between the sensor and a target object. 
+The sensor contains two core components: an emitter and a receiver.
+The emitter, typically an infrared (IR) laser or LED, fires a pulse or a continuous modulated beam of light toward the target.
+The moment that light leaves the emitter, an internal high-precision clock starts ticking. When the light hits the object in front of it, 
+it bounces back and is captured by the receiver, which is usually a photodetector or an array of Single Photon Avalanche Diodes (SPADs).
+The clock stops the instant the reflected light is detected, and the sensor uses the elapsed time along with the known speed of light 
+(approximately 299,792,458 meters per second) 
+to calculate the exact distance using the formula:
+Distance = (Speed of Light × Time) / 2 — divided by two because the light travels to the object and back.
+There are two main techniques ToF sensors use internally.
+The first is Pulsed ToF, where a short burst of light is emitted and the time delay of the returning pulse is measured directly —
+this method is highly accurate and commonly used in LiDAR systems for autonomous vehicles and drones.
+The second is Continuous Wave (CW) Phase-Shift ToF, where instead of a single pulse, a continuously modulated light wave is sent out,
+and the sensor measures the phase difference between the emitted and received signals to determine distance 
+— this approach is widely used in compact sensors like the VL53L0X found in smartphones and robotics.
+The phase shift method is preferred in consumer electronics because it is power-efficient, fast, and works well at shorter ranges.
+What makes ToF sensors stand out from other distance-measuring technologies is their immunity to ambient light interference (thanks to precise filtering), 
+their ability to measure distance independently of the target's color or texture (unlike infrared reflectance sensors), 
+and their extremely fast response time — often updating readings hundreds of times per second.
+Modern ToF sensors also incorporate on-chip signal processing that handles noise filtering, temperature compensation, and cross-talk correction automatically, 
+delivering clean and reliable distance data over a simple I2C or SPI interface to your microcontroller. 
+This combination of accuracy, speed, and simplicity is exactly why ToF sensors are widely used in applications like smartphone face unlock systems, 
+robotic obstacle avoidance, industrial automation, gesture detection, and liquid level measurement.
