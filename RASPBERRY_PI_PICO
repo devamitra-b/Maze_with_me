@@ -1,6 +1,6 @@
 A beginner-friendly and in-depth guide to understanding and using the Raspberry Pi Pico microcontroller board.
 This guide covers everything from what the Pico is, how it works internally, how to program it, and what projects you can build with it.
-What is Raspberry Pi Pico?:
+What is Raspberry Pi Pico:
 The Raspberry Pi Pico is a low-cost, high-performance microcontroller board developed by the Raspberry Pi Foundation and released in January 2021.
 It is built around the RP2040, a custom chip designed entirely by Raspberry Pi.
 Unlike the Raspberry Pi 4 or Raspberry Pi Zero, the Pico is not a mini computer and does not run Linux.
