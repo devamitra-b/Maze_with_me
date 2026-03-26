@@ -5,7 +5,7 @@ The module typically comes with either 6 or 7 pins depending on the breakout boa
 and each pin serves a specific and important function in the overall operation of the sensor. 
 Let's walk through each pin in detail.
 The VCC (Power Supply):
-The VCC (Power Supply) pin is the first and most fundamental pin — it supplies power to the entire sensor module. 
+The VCC (Power Supply) pin is the first and most fundamental pin  —  it supplies power to the entire sensor module. 
 The VL53L0X operates at 3.3V, but most breakout boards (like those from Adafruit or Pololu) include an onboard voltage regulator, 
 making them compatible with both 3.3V and 5V systems such as Arduino Uno or ESP32. 
 Always check your specific module's datasheet to confirm the acceptable voltage range, 
