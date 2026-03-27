@@ -1,6 +1,7 @@
 The MX1508 motor driver module comes with a straightforward and user-friendly pin configuration that makes it easy to interface with microcontrollers and motors.
 The module typically has a total of 8 pins, divided into power pins, control input pins, and motor output pins.
 Understanding each pin's role is essential for correctly wiring and operating the driver in any embedded or robotics application.
+
 Power Supply Pins (VCC and GND):
 The module has two power-related pins — VCC and GND.
 The VCC pin is the positive power supply input, which accepts a voltage range of approximately 2V to 10V.
