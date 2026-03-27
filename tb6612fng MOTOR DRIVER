@@ -1,14 +1,14 @@
 TB6612FNG:
-Takes low-power signals from a controller
-Drives high-power motors safely
+Takes low-power signals from a controller.
+Drives high-power motors safely.
 can control:
-2 DC motors OR
+2 DC motors OR,
 1 stepper motor
-Why do we need it?
+Why do we need it?:
 A board like the Arduino Nano:
-Cannot supply enough current to run motors
-Can get damaged if connected directly
-So TB6612FNG acts as a middle layer (driver)
+Cannot supply enough current to run motors.
+Can get damaged if connected directly.
+So TB6612FNG acts as a middle layer (driver).
 
 How it works (Simple):
 Step-by-step process:
