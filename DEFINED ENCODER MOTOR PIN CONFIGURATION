@@ -5,10 +5,9 @@ A DC motor with encoder is widely used in robotics and automation because it not
 A DC motor encoder is a normal DC motor attached with an encoder sensor (usually optical or magnetic).
 It provides pulses when the motor shaft rotates.
 These pulses help measure:
-
-Speed (RPM)
-Direction
-Position (angle)
+Speed (RPM),
+Direction,
+Position (angle).
 2. Typical Pin Configuration (Most Common Types)
 
 A DC motor encoder usually has 4 to 6 pins, depending on the model.
