@@ -1,9 +1,9 @@
 Time of Flight(TOF) sensor:
 A Time-of-Flight (ToF) sensor is a type of proximity and depth-sensing device that measures distance by calculating how long it takes for emitted light 
 (typically infrared laser pulses) to travel to an object and reflect back to the sensor.
-The fundamental principle is straightforward: since the speed of light is constant, 
-the sensor can precisely determine the distance to an object by measuring this round-trip time, 
-often down to millimeter-level accuracy. 
+The fundamental principle is straightforward: 
+since the speed of light is constant,
+the sensor can precisely determine the distance to an object by measuring this round-trip time, often down to millimeter-level accuracy. 
 Unlike traditional ultrasonic sensors that use sound waves, ToF sensors use light, making them significantly faster, more accurate,
 and capable of working across a wider range of distances — typically from a few centimeters up to several meters.
 In embedded systems and robotics projects pushed to GitHub, ToF sensors like the VL53L0X or VL53L1X (by STMicroelectronics) are extremely popular. 
