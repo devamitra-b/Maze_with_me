@@ -1,6 +1,7 @@
 The MX1508 is a compact and low-cost dual-channel DC motor driver IC widely used in hobbyist robotics and embedded systems projects.
 It is designed to control two DC motors simultaneously or one stepper motor, making it a versatile choice for small-scale automation applications. 
-The chip operates on a supply voltage typically ranging from 2V to 10V, making it compatible with common microcontroller platforms like Arduino,ESP8266, and Raspberry Pi.
+The chip operates on a supply voltage typically ranging from 2V to 10V, making it compatible with common microcontroller platforms
+like Arduino,ESP8266, and Raspberry Pi.
 It can deliver a continuous current of around 1.5A per channel, with peak currents reaching up to 2.5A, which is sufficient for driving small to medium-sized DC motors.
 Internally, the MX1508 uses an H-bridge circuit for each motor channel. An H-bridge is a configuration of four switches (transistors) arranged in the shape of the letter "H," 
 which allows current to flow through the motor in either direction, enabling both forward and reverse rotation.
