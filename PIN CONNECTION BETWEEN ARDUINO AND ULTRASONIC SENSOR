@@ -2,37 +2,35 @@ Ultrasonic Sensor Pins (HC-SR04)
 
 The ultrasonic sensor has 4 pins:
 
-Pin	Name	Function
-1	VCC	Power supply (5V)
-2	TRIG	Trigger input
-3	ECHO	Echo output
-4	GND	Ground
-2. Arduino Connection
- Basic Wiring
+1	VCC	Power  ->    supply (5V),
+2	TRIG	  ->     Trigger input,
+3	ECHO	  ->     Echo output,
+4	GND        -> 	Ground,
+2. Arduino Connection.
+ Basic Wiring;
 Ultrasonic Sensor	Arduino
-VCC	5V
-GND	GND
-TRIG	Digital Pin (e.g., D9)
-ECHO	Digital Pin (e.g., D10)
+VCC	                  5V
+GND	                  GND
+TRIG	            Digital Pin (e.g., D9)
+ECHO	            Digital Pin (e.g., D10)
 3. How Each Pin Works
-VCC & GND
-Provide power to the sensor
+VCC & GND->Provide power to the sensor
 VCC → 5V
 GND → Ground
-TRIG (Trigger Pin)
+TRIG (Trigger Pin):->
 This is an input pin
 Arduino sends a HIGH pulse (10 microseconds)
 
 This tells the sensor:
 “Start measuring distance”
 
-ECHO (Echo Pin)
+ECHO (Echo Pin):
 This is an output pin
 Sensor sends a pulse back to Arduino
 
 Pulse duration = time taken for sound to travel to object and return
 
-4. Working Principle
+4. Working Principle:
 
 The sensor uses sound waves based on the concept of:
 
@@ -45,14 +43,14 @@ Sensor emits ultrasonic wave
 Wave hits object and reflects
 ECHO pin goes HIGH
 Time is measured
-5. Distance Formula
+5. Distance Formula:
 
 Distance is calculated using:
 Distance=Time×Speed of Sound/2
 	​
 Speed of sound ≈ 343 m/s
 
-6. Simple Wiring Diagram (Text)
+6. Simple Wiring Diagram (Text):
 Ultrasonic Sensor     Arduino
 ------------------    --------
 VCC  ---------------> 5V
@@ -60,7 +58,7 @@ GND  ---------------> GND
 TRIG ---------------> D9
 ECHO ---------------> D10
 Pin	Name	Function
-1	VCC	Powersupply (5V)
+1	VCC	Powersupply   ->(5V)
 2	TRIG	->Trigger input
 3	ECHO	->Echo output
 4	GND	->Ground
