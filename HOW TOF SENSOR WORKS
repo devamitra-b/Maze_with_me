@@ -1,6 +1,6 @@
 A Time-of-Flight (ToF) sensor works on a beautifully simple yet powerful principle — it measures distance by timing how long it takes for light to make a round trip between the sensor and a target object. 
 The sensor contains two core components:
-An Emitter and a receiver.
+An Emitter and a Receiver.
 The emitter, typically an infrared (IR) laser or LED, fires a pulse or a continuous modulated beam of light toward the target.
 The moment that light leaves the emitter, an internal high-precision clock starts ticking. When the light hits the object in front of it, 
 it bounces back and is captured by the receiver, which is usually a photodetector or an array of Single Photon Avalanche Diodes (SPADs).
