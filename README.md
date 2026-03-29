@@ -28,7 +28,7 @@ The project involves the following elements:
 * Microcontroller (Arduino / similar)
 * Motor driver module
 * DC motors and wheels
-* Sensors (IR / Ultrasonic)
+* Sensors (IR / Ultrasonic/TOF)
 * Power supply system
 * Chassis and mechanical setup
 
