@@ -1,73 +1,61 @@
-# 📁 Electronics Learning Repository
+# 📁 Maze_With_me Repository
 
 ## 📁 About This Repository
 
-This repository is dedicated to learning, practicing, and strengthening core concepts in Electronics. It contains structured notes, explanations, and practical insights developed during my continuous learning process, focusing on clarity, understanding, and real-world application.
+This repository is dedicated to designing, building, and understanding a Maze Solving Robot. It contains structured explanations, code implementations, and practical insights developed during my learning process, focusing on logic building, problem-solving, and real-time application.
 
-The repository serves as a personal knowledge base as well as a reference for beginners who want to understand fundamental electronics concepts in a simple and effective way.
+The repository serves as a personal knowledge base as well as a reference for beginners who want to explore robotics concepts through a maze-solving project.
 
 ---
 
 ## 📁 Learning Source
 
-Instructor - Dr. Balajee Shesadri,Dr.Danieal Raj A
-Learning Platform - ETALVIS.COM
-
-This guidance helped build a strong foundation in both theoretical and practical aspects of electronics.
+Instructor -  Dr. Danieal Raj A
+This guidance helped in understanding both theoretical concepts and practical implementation of robotics systems.
 
 ---
 
-## 📁 Course Contents
+## 📁 Project Overview
 
-This course is divided into the following sections:
+**Maze_With_me** is a project focused on building a robot that can navigate and solve a maze using sensors and logical algorithms.
 
-1. **Electrical Fundamentals**
+---
 
-   * Basic electrical quantities (Voltage, Current, Resistance)
-   * Ohm’s Law
-   * Power and Energy concepts
+## 📁 Key Components
 
-2. **Electronics Fundamentals**
+The project involves the following elements:
 
-   * Semiconductor basics
-   * Diodes and Transistors
-   * Basic electronic components
-
-3. **Number Systems**
-
-   * Binary, Decimal, Octal, Hexadecimal
-   * Conversions between number systems
-   * Basic digital calculations
-
-4. **Digital Electronics**
-
-   * Logic gates
-   * Boolean algebra
-   * Combinational and sequential circuits
+* Microcontroller (Arduino / similar)
+* Motor driver module
+* DC motors and wheels
+* Sensors (IR / Ultrasonic)
+* Power supply system
+* Chassis and mechanical setup
 
 ---
 
 ## 📁 Concepts Practiced
 
-The materials in this repository cover:
+The materials and implementation in this repository cover:
 
-* Understanding of electrical and electronic principles
-* Analysis of basic circuits
-* Working of electronic components
-* Number system conversions and logic
-* Digital circuit design basics
-* Problem-solving using electronics concepts
+* Basics of robotics and embedded systems
+* Sensor interfacing and data reading
+* Motor control and movement logic
+* Maze-solving algorithms (Left-hand / Right-hand rule)
+* Real-time decision making
+* Integration of hardware and software
 
-Each topic is explained with simple examples for easy understanding.
+Each concept is implemented in a simple and understandable manner.
 
 ---
 
 ## 📁 Repository Structure
 
-* The repository is organized into topic-based folders
-* Each folder contains notes, examples, and diagrams
-* Content is structured for clarity and easy navigation
-* Focus is given to clean and understandable presentation
+* The repository is organized into different sections
+* Code files for robot control
+* Circuit diagrams and hardware connections
+* Documentation and explanation files
+* Images and videos of project execution
 
 ---
 
@@ -75,18 +63,20 @@ Each topic is explained with simple examples for easy understanding.
 
 The main goals of this repository are:
 
-* To build a strong foundation in electronics
-* To improve analytical and problem-solving skills
-* To maintain well-organized study material
-* To simplify revision of important concepts
-* To develop practical understanding of circuits
+* To understand the fundamentals of robotics
+* To build a working maze-solving robot
+* To improve logical thinking and problem-solving skills
+* To gain hands-on experience with hardware components
+* To document and organize the complete project
 
 ---
 
-## 📁 Tools & Resources
+## 📁 Tools & Technologies
 
-* Circuit simulation tools (Proteus / Multisim) *(optional)*
-* Notes and diagrams for conceptual clarity
+* Arduino IDE
+* Embedded C / Arduino Programming
+* Simulation tools (if used)
+* Basic electronics components
 
 ---
 
@@ -94,27 +84,30 @@ The main goals of this repository are:
 
 Name - Devamitra B
 
-This repository reflects my personal learning journey and growth in electronics.
+This repository reflects my personal learning journey and hands-on experience in robotics.
 
 ---
 
 ## 📁 Usage Notes
 
-* Content is intended for educational purposes
-* Materials can be modified for learning and practice
-* Suitable for beginners and students
+* This project is intended for educational purposes
+* Code and design can be modified for learning and experimentation
+* Suitable for beginners in robotics and embedded systems
 
 ---
 
 ## 📁 Future Improvements
 
-* Addition of more circuit examples
-* Inclusion of advanced electronics topics
-* More detailed explanations and diagrams
-* Better structured documentation
+* Implementation of advanced maze-solving algorithms
+* Use of better sensors for accuracy
+* Optimization of movement and speed
+* Adding mapping and memory features
+* Improved documentation and visuals
 
 ---
 
 ## 📁 Acknowledgement
 
-This repository represents my ongoing journey in learning Electronics. It will continue to evolve as I explore more concepts and deepen my understanding.
+This repository represents my ongoing journey in robotics and embedded systems. It will continue to evolve as I explore more advanced concepts and improve my project skills.
+
+---
