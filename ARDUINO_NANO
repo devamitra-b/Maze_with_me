@@ -8,6 +8,20 @@ Works with the Arduino IDE
 8 analog pins
 Can connect sensors + motor drivers (like TB6612FNG)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Arduino Nano works :
 Reads inputs (sensors)
 Processes logic (your code)
