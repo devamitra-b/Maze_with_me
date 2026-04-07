@@ -12,7 +12,6 @@ Arduino Nano works :
 Reads inputs (sensors)
 Processes logic (your code)
 Controls outputs (motors, LEDs)
-
 Input → Process → Output cycle:
 Input:
 Sensors send signals
