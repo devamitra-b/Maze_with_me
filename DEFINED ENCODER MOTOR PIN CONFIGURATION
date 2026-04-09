@@ -8,6 +8,7 @@ These pulses help measure:
 Speed (RPM),
 Direction,
 Position (angle).
+
 2. Typical Pin Configuration (Most Common Types)
 
 A DC motor encoder usually has 4 to 6 pins, depending on the model.
