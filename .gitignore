@@ -1,0 +1,55 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+*.code-workspace
+
+# IDE IntelliJ
+*.iml
+*.iws
+*.ipr
+
+# Build files
+*.o
+*.a
+*.so
+*.bin
+*.hex
+*.elf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.env
+venv/
+env/
+
+# Arduino
+.pioenvs/
+.piolibdeps/
+*.ino.cpp
+*.ino.d
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.backup
+*.bak
